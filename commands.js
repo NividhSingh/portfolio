@@ -25,8 +25,16 @@ const helpCommands = [
     description: "learn more aboute a specific project or internship",
   },
   {
-    command: "resume",
-    description: "open my resume in a new tab",
+    command: "open resume",
+    description: "open resume in a new tab",
+  },
+  {
+    command: "open github",
+    description: "open my github page in a new tab",
+  },
+  {
+    command: "open linkedin",
+    description: "open my LinkedIn profile in a new tab",
   },
   {
     command: "email",

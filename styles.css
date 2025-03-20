@@ -1,0 +1,88 @@
+/* Reset defaults */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #000; /* Black background */
+  font-family: 'Courier New', Courier, monospace;
+  color: #fff; /* Default text white */
+}
+
+/* Terminal container */
+.terminal {
+  width: 80%;
+  max-width: 800px;
+  margin: 5% auto;
+  border: 1px solid #333;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.8);
+  background-color: #000;
+  overflow-y: auto;
+  padding-bottom: 10px;
+}
+
+/* Terminal header with window buttons */
+.terminal-header {
+  background-color: #333;
+  padding: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.red { background-color: #ff605c; }
+.yellow { background-color: #ffbd44; }
+.green { background-color: #00ca4e; }
+
+/* Terminal body & lines */
+.terminal-body {
+  padding: 20px;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  text-align: left;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Prompt styling */
+.prompt {
+  margin-right: 0px;
+}
+
+.guest { color: #00ff00; }  /* guest@portfolio in green */
+.dollar { color: #fff; }     /* :~$ in white */
+
+/* Editable command area */
+.command {
+  outline: none;
+  min-width: 100px;
+  color: #fff;
+  display: inline;
+}
+
+/* Blinking block cursor */
+.blinking-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.2em;
+  background-color: #fff;
+  margin-left: 2px;
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  50% { background-color: transparent; }
+}
+
+/* Output lines remain white */
+.output { color: #fff; }

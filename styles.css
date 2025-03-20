@@ -92,3 +92,8 @@ html, body {
   color: #fff;
 }
 
+
+.tldr-highlight {
+  color: purple;
+  font-weight: bold;
+}

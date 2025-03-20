@@ -5,7 +5,7 @@ const helpCommands = [
     description: "list all commands (you're looking at it)",
   },
   {
-    command: "aboutme",
+    command: "about me",
     description: "learn about me!",
   },
   {

@@ -1,88 +1,94 @@
-/* Reset defaults */
-body, html {
+/* Ensure the html and body fill the entire screen */
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   background-color: #000; /* Black background */
+  color: #fff; /* White text */
   font-family: 'Courier New', Courier, monospace;
-  color: #fff; /* Default text white */
 }
 
-/* Terminal container */
+/* Terminal spans the full screen */
 .terminal {
-  width: 80%;
-  max-width: 800px;
-  margin: 5% auto;
-  border: 1px solid #333;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.8);
-  background-color: #000;
-  overflow-y: auto;
-  padding-bottom: 10px;
+  width: 100%;
+  height: 100%;
 }
 
-/* Terminal header with window buttons */
-.terminal-header {
-  background-color: #333;
-  padding: 10px;
-  display: flex;
-  gap: 5px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.red { background-color: #ff605c; }
-.yellow { background-color: #ffbd44; }
-.green { background-color: #00ca4e; }
-
-/* Terminal body & lines */
+/* Terminal body fills the terminal container */
 .terminal-body {
+  box-sizing: border-box;
   padding: 20px;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
   font-size: 1.1em;
   line-height: 1.5em;
-  text-align: left;
 }
 
+/* Style for the welcome message */
+.welcome {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+/* Highlighted words (help & exit) */
+.command-highlight {
+  color: purple;
+  font-weight: bold;
+}
+
+/* Each line is a flex container */
 .line {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
 
-/* Prompt styling */
+/* Prompt styling: no extra right margin */
 .prompt {
-  margin-right: 0px;
+  margin-right: 0;
 }
 
-.guest { color: #00ff00; }  /* guest@portfolio in green */
-.dollar { color: #fff; }     /* :~$ in white */
+/* Colors for prompt parts */
+.guest {
+  color: #00ff00; /* guest@portfolio in green */
+}
+.dollar {
+  color: #fff; /* :~$ in white */
+}
 
 /* Editable command area */
 .command {
   outline: none;
-  min-width: 100px;
   color: #fff;
   display: inline;
-}
-
-/* Blinking block cursor */
-.blinking-cursor {
-  display: inline-block;
-  width: 10px;
-  height: 1.2em;
-  background-color: #fff;
-  margin-left: 2px;
-  animation: blink 1s steps(2, start) infinite;
-}
-
-@keyframes blink {
-  50% { background-color: transparent; }
+  min-width: 100px;
 }
 
 /* Output lines remain white */
-.output { color: #fff; }
+.output {
+  color: #fff;
+}
+
+
+/* Help table styles */
+.help-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.help-table td {
+  padding: 4px 8px;
+}
+
+.help-command {
+  color: purple;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.help-description {
+  color: #fff;
+}
+

@@ -1,15 +1,27 @@
 // tldrData.js
 const tldrItems = [
-  { title: "project1", link: "https://example.com/project1", type: "project" },
-  { title: "project2", link: "https://example.com/project2", type: "project" },
+  { title: "The Cube", link: "placeholder.com", type: "project" },
+  { title: "NASA SLI Rocket", link: "placeholder.com", type: "project" },
   {
-    title: "internship1",
-    link: "https://example.com/internship1",
+    title: "Active Aerobrake System",
+    link: "placeholder.com",
+    type: "project",
+  },
+
+  {
+    title: "Spring Launch at Palantir",
+    link: "placeholder.com",
+    type: "internship",
+  },
+  { title: "Software at Pacer", link: "placeholder.com", type: "internship" },
+  {
+    title: "Software Intern at Mach Industries",
+    link: "placeholder.com",
     type: "internship",
   },
   {
-    title: "internship2",
-    link: "https://example.com/internship2",
+    title: "Software Intern at Mach Industries",
+    link: "placeholder.com",
     type: "internship",
   },
 ];

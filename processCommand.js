@@ -13,8 +13,7 @@ function processCommand(cmd) {
       return tableHTML;
 
     case "about me":
-      return `Hi! I'm a sophomore at Olin College of Engineering near Boston. 
-I’ve been building software for 6 years. I love building cool stuff and challenging myself, whether that be making a self-balancing cube or completing an Ironman. In my free time I enjoy watching and playing basketball and F1, riding horses, and gokarting.`;
+      return `${bioData.bio}`;
 
     case "clear":
       if (typeof window.clearTerminal === "function") {
@@ -23,9 +22,8 @@ I’ve been building software for 6 years. I love building cool stuff and challe
       return "";
 
     case "open resume":
-      const resumeLink = "https://google.com";
-      window.open(resumeLink, "_blank", "noopener,noreferrer");
-      return `<a href="${resumeLink}" target="_blank" rel="noopener noreferrer">View Resume</a>`;
+      window.open(bioData.resumeLink, "_blank", "noopener,noreferrer");
+      return `<a href="${bioData.resumeLink}" target="_blank" rel="noopener noreferrer">View Resume</a>`;
 
     case "email":
       return '<a href="mailto:nividh.singh@gmail.com?subject=Hello%20There&body=I%20wanted%20to%20reach%20out...">Email me (nividh.singh@gmail.com)</a>';

@@ -3,6 +3,7 @@ let currentSort = "recent"; // "recent" or "favorite"
 
 document.addEventListener("DOMContentLoaded", function () {
   // ... your other initialization code
+  renderNavbarDropdowns();
 
   // Set the default active filter as "all"
   updateActiveFilter("filter-all");
@@ -104,6 +105,43 @@ function updateActiveFilter(selectedId) {
     }
   });
 }
+
+function renderNavbarDropdowns() {
+  // Get the dropdown container elements by their IDs
+  const internshipMenu = document.getElementById("navbar-internships-menu");
+  const projectMenu = document.getElementById("navbar-projects-menu");
+
+  if (internshipMenu) {
+    internshipMenu.innerHTML = "";
+    tldrItems
+      .filter((item) => item.type === "internship")
+      .forEach((item) => {
+        const a = document.createElement("a");
+        a.href = item.link;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.className = "block px-4 py-2 hover:bg-gray-700 rounded";
+        a.textContent = item.title;
+        internshipMenu.appendChild(a);
+      });
+  }
+
+  if (projectMenu) {
+    projectMenu.innerHTML = "";
+    tldrItems
+      .filter((item) => item.type === "project")
+      .forEach((item) => {
+        const a = document.createElement("a");
+        a.href = item.link;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.className = "block px-4 py-2 hover:bg-gray-700 rounded";
+        a.textContent = item.title;
+        projectMenu.appendChild(a);
+      });
+  }
+}
+
 document.getElementById("filter-all").addEventListener("click", () => {
   currentFilter = "all";
   renderCards();

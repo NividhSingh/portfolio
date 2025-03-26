@@ -172,6 +172,16 @@
               </script>
             </p>
           </div>
+          <!-- Down Arrow and "Scroll for more" Text -->
+          <div class="absolute bottom-8 w-full flex flex-col items-center">
+            <p class="text-white text-sm mb-2">Scroll for more</p>
+            <button
+              id="scroll-down"
+              class="text-white text-3xl animate-bounce focus:outline-none"
+            >
+              &#8595;
+            </button>
+          </div>
         </div>
 
         <!-- Mobile Hero Section (visible on small screens) -->
@@ -198,7 +208,7 @@
       </header>
 
       <!-- Projects & Internships Section -->
-      <section class="py-8">
+      <section id="projects-section" class="py-8">
         <div class="max-w-screen-lg mx-auto px-4">
           <!-- Filter and Sort Controls -->
           <div
@@ -242,6 +252,7 @@
         </div>
       </section>
     </main>
+    <script src="tldrData.js"></script>
     <script src="web.js"></script>
     <script>
       // Set the resume link from bioData.resumeLink

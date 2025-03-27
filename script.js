@@ -16,19 +16,25 @@ document.addEventListener("DOMContentLoaded", function () {
         // Read and trim the input text
         const input = e.target.textContent.trim();
         if (input !== "") {
-          // Push the command into history and reset history index
-          commandHistory.push(input);
-          historyIndex = commandHistory.length;
-
-          // Echo the command above the current prompt line
+          // Echo the command above the prompt
           addLine(
             `<span class="prompt"><span class="guest">guest@portfolio</span><span class="dollar">:~$</span>&nbsp;${input}</span>`
           );
 
-          // Process the command and output the response if any
+          // Process the command and output the response
           const output = processCommand(input);
-          if (output) {
-            addLine(`<span class="output">${output}</span>`);
+
+          // If output is a promise, wait for it to resolve
+          if (output instanceof Promise) {
+            output.then((resolvedOutput) => {
+              if (resolvedOutput) {
+                addLine(`<span class="output">${resolvedOutput}</span>`);
+              }
+            });
+          } else {
+            if (output) {
+              addLine(`<span class="output">${output}</span>`);
+            }
           }
         }
 
@@ -60,33 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
           setCaretToEnd(e.target);
         }
       }
-    }
-  });
-
-  // Use event delegation to handle Enter key on any .command element
-  terminalBody.addEventListener("keydown", function (e) {
-    if (e.target.classList.contains("command") && e.key === "Enter") {
-      e.preventDefault();
-      const currentLine = e.target.parentElement;
-
-      // Read and trim the input text
-      const input = e.target.textContent.trim();
-      if (input !== "") {
-        // Echo the command above the current prompt line;
-        // note the use of &nbsp; for a non-collapsible space after the prompt
-        addLine(
-          `<span class="prompt"><span class="guest">guest@portfolio</span><span class="dollar">:~$</span>&nbsp;${input}</span>`
-        );
-
-        // Process the command and output the response if any
-        const output = processCommand(input);
-        if (output) {
-          addLine(`<span class="output">${output}</span>`);
-        }
-      }
-
-      // Clear the current input
-      e.target.innerHTML = "";
     }
   });
 

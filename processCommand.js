@@ -13,7 +13,12 @@ function processCommand(cmd) {
       return tableHTML;
 
     case "about me":
-      return `${bioData.bio}`;
+      // Load ASCII art only if the screen is wide enough.
+      return loadAsciiArt("headshot.txt").then((art) => {
+        // Wrap the art in a <pre> tag with a specific class for styling.
+        const artOutput = art ? `<pre class="ascii-art">${art}</pre><br>` : "";
+        return artOutput + bioData.bio;
+      });
 
     case "clear":
       if (typeof window.clearTerminal === "function") {

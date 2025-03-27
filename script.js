@@ -1,3 +1,11 @@
+document.addEventListener("click", () => {
+  const commandInputs = document.querySelectorAll(".command");
+  const lastCommand = commandInputs[commandInputs.length - 1];
+  if (lastCommand) {
+    lastCommand.focus();
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   const terminalBody = document.getElementById("terminal-body");
   let commandHistory = [];
@@ -16,6 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
         // Read and trim the input text
         const input = e.target.textContent.trim();
         if (input !== "") {
+          // Push the command into history and reset history index
+          commandHistory.push(input);
+          historyIndex = commandHistory.length;
+
           // Echo the command above the prompt
           addLine(
             `<span class="prompt"><span class="guest">guest@portfolio</span><span class="dollar">:~$</span>&nbsp;${input}</span>`
@@ -41,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Clear the current input
         e.target.innerHTML = "";
       } else if (e.key === "ArrowUp") {
+        console.log("Up");
         e.preventDefault();
         // Only if there's history available
         if (commandHistory.length > 0) {

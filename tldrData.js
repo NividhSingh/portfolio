@@ -13,7 +13,9 @@ const tldrItems = [
     description:
       "Built a cube that uses a PID controller and flywheel to balance on its edge",
     date: "2024-12-12",
-    favorite: 5,
+    favorite: 100,
+    ascii_image: "ascii_art/cube.txt",
+    ascii_image_length: 500,
   },
   {
     title: "NASA SLI Rocket",
@@ -23,7 +25,7 @@ const tldrItems = [
     description:
       "I led a team to design, simulat, build, test, and successfully launch a rocket for the NASA SLI 2022-23 Challenge. Won the Payload Design Award. The rocket was about seven feet and went about 3,500 feet into the air.",
     date: "2023-05-04",
-    favorite: 5,
+    favorite: 80,
   },
   {
     title: "Active Aerobrake System",
@@ -33,7 +35,7 @@ const tldrItems = [
     description:
       "I built an active aerobrake system that controlled the rocket’s ascent. The system actively predicts the rocket's apogee. If this is higher than the goal apogee, the system deploys three fins to increase the surface area of the rocket. This increases the drag, decreasing the projected apogee.",
     date: "2023-05-01",
-    favorite: 5,
+    favorite: 85,
   },
   {
     title: "Hobby Hub",
@@ -43,7 +45,9 @@ const tldrItems = [
     description:
       "Built a mobile app using Xamarin and Google's Fire Base Server to connect people based on their hobbies",
     date: "2022-04-01",
-    favorite: 5,
+    favorite: 50,
+    ascii_image: "ascii_art/hobby_hub.txt",
+    ascii_image_length: 500,
   },
   {
     title: "Eagle Project",
@@ -53,7 +57,7 @@ const tldrItems = [
     description:
       "One of the biggest parts of my journey toward becoming an Eagle Scout is an Eagle Project. This involves leading a project to benefit a non-profit organization. For my Eagle Project, I built four benches for the Portland Chapter of the Audubon Society. ",
     date: "2022-08-18",
-    favorite: 5,
+    favorite: 60,
   },
   {
     title: "Spring Launch at Palantir",
@@ -62,7 +66,7 @@ const tldrItems = [
     image: "img/palantir.png",
     description: "Spring Launch Intern",
     date: "2025-03-16",
-    favorite: 5,
+    favorite: 75,
     ascii_image: "ascii_art/palantir.txt",
     ascii_image_length: 428,
   },
@@ -73,7 +77,7 @@ const tldrItems = [
     image: "img/pacer.png",
     description: "Part-Time Software Engineer",
     date: "2025-06-01",
-    favorite: 5,
+    favorite: 87,
   },
   {
     title: "Software Intern at Mach Industries",
@@ -82,7 +86,7 @@ const tldrItems = [
     image: "img/mach.png",
     description: "Summer 2024 Computer Science Internship",
     date: "2024-08-01",
-    favorite: 5,
+    favorite: 90,
   },
 ];
 

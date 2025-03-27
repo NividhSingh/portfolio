@@ -1,20 +1,34 @@
 function processCommand(cmd) {
   switch (cmd.toLowerCase()) {
     case "help":
-      let tableHTML = `<table class="help-table">`;
-      helpCommands.forEach((item) => {
-        tableHTML += `
+      if (window.innerWidth < 768) {
+        // Mobile version: each command and description in stacked blocks
+        let output = "";
+        helpCommands.forEach((item) => {
+          output += `
+            <div class="help-item mb-4">
+              <div class="help-command text-purple-500 font-bold">${item.command}</div>
+              <div class="help-description-mobile text-white">${item.description}</div>
+            </div>`;
+        });
+        return output;
+      } else {
+        // Desktop version: table format
+        let tableHTML = `<table class="help-table">`;
+        helpCommands.forEach((item) => {
+          tableHTML += `
             <tr>
-              <td class="help-command">${item.command}</td>
-              <td class="help-description">${item.description}</td>
+              <td class="help-command text-purple-500 font-bold">${item.command}</td>
+              <td class="help-description text-white">${item.description}</td>
             </tr>`;
-      });
-      tableHTML += `</table>`;
-      return tableHTML;
+        });
+        tableHTML += `</table>`;
+        return tableHTML;
+      }
 
     case "about me":
       // Load ASCII art only if the screen is wide enough.
-      return loadAsciiArt("headshot.txt").then((art) => {
+      return loadAsciiArt("ascii_art/headshot.txt").then((art) => {
         // Wrap the art in a <pre> tag with a specific class for styling.
         const artOutput = art ? `<pre class="ascii-art">${art}</pre><br>` : "";
         return artOutput + bioData.bio;
@@ -44,7 +58,30 @@ function processCommand(cmd) {
       return `<a href="${linkedinLink}" target="_blank" rel="noopener noreferrer">View Linkedin</a>`;
 
     case "tldr":
-      return generateTldrTable(tldrItems);
+      if (window.innerWidth < 768) {
+        // Mobile version: stacked format
+        let output = "";
+        tldrItems.forEach((item) => {
+          output += `
+        <div class="tldr-item mb-4">
+          <div class="tldr-highlight text-purple-500 font-bold">tldr ${item.title}</div>
+          <div class="tldr-description text-white">${item.description}</div>
+        </div>`;
+        });
+        return output;
+      } else {
+        // Desktop version: table format
+        let tableHTML = `<table class="help-table">`;
+        tldrItems.forEach((item) => {
+          tableHTML += `
+        <tr>
+          <td class="tldr-command text-purple-500 font-bold">tldr ${item.title}</td>
+          <td class="tldr-description text-white">${item.description}</td>
+        </tr>`;
+        });
+        tableHTML += `</table>`;
+        return tableHTML;
+      }
 
     case "tldr projects":
       return generateTldrTable(

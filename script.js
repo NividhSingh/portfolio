@@ -101,12 +101,20 @@ document.addEventListener("DOMContentLoaded", function () {
     while (terminalBody.firstChild) {
       terminalBody.removeChild(terminalBody.firstChild);
     }
-    // Create and insert the welcome message at the top of the terminal
-    const welcome = document.createElement("div");
-    welcome.className = "welcome";
-    welcome.innerHTML = `Welcome to Nividh Singh's Portfolio. Type <span class="command-highlight">help</span> to get started or type <span class="command-highlight">exit</span> for the web version.`;
-    terminalBody.appendChild(welcome);
-    createPrompt();
+    // Load the ASCII art and then add it along with the welcome message
+    loadAsciiArt("ascii_art/NS.txt", 235).then((ascii) => {
+      if (ascii) {
+        const artDiv = document.createElement("div");
+        artDiv.className = "ascii-art";
+        artDiv.innerHTML = `<pre class="ascii-art">${ascii}</pre>`;
+        terminalBody.appendChild(artDiv);
+      }
+      const welcome = document.createElement("div");
+      welcome.className = "welcome";
+      welcome.innerHTML = `Welcome to Nividh Singh's Portfolio. Type <span class="command-highlight">help</span> to get started or type <span class="command-highlight">exit</span> for the web version.`;
+      terminalBody.appendChild(welcome);
+      createPrompt();
+    });
   }
 
   // Utility function to set the caret at the end of a contentEditable element

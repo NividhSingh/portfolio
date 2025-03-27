@@ -16,6 +16,7 @@ const tldrItems = [
     favorite: 100,
     ascii_image: "ascii_art/cube.txt",
     ascii_image_length: 500,
+    asciiLargeOrSmall: "small",
   },
   {
     title: "NASA SLI Rocket",
@@ -48,6 +49,7 @@ const tldrItems = [
     favorite: 50,
     ascii_image: "ascii_art/hobby_hub.txt",
     ascii_image_length: 500,
+    asciiLargeOrSmall: "small",
   },
   {
     title: "Eagle Project",
@@ -58,6 +60,9 @@ const tldrItems = [
       "One of the biggest parts of my journey toward becoming an Eagle Scout is an Eagle Project. This involves leading a project to benefit a non-profit organization. For my Eagle Project, I built four benches for the Portland Chapter of the Audubon Society. ",
     date: "2022-08-18",
     favorite: 60,
+    ascii_image: "ascii_art/eagle.txt",
+    ascii_image_length: 766,
+    asciiLargeOrSmall: "large",
   },
   {
     title: "Spring Launch at Palantir",
@@ -69,6 +74,7 @@ const tldrItems = [
     favorite: 75,
     ascii_image: "ascii_art/palantir.txt",
     ascii_image_length: 428,
+    asciiLargeOrSmall: "small",
   },
   {
     title: "Software Engineer at Pacer",

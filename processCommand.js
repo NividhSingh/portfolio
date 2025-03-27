@@ -117,7 +117,7 @@ function processCommand(cmd) {
               matchedItem.ascii_image_length
             ).then((art) => {
               const artOutput = art
-                ? `<pre class="ascii-art-small">${art}</pre><br>`
+                ? `<pre class="ascii-art-${matchedItem.asciiLargeOrSmall}">${art}</pre><br>`
                 : "";
 
               return (

@@ -103,6 +103,11 @@ function processCommand(cmd) {
       window.location.href = "web.html";
       return "";
 
+    case "web":
+      // Redirect to the web version
+      window.location.href = "web.html";
+      return "";
+
     default:
       // Handle specific tldr commands, e.g., "tldr project alpha"
       if (cmd.toLowerCase().startsWith("tldr ")) {

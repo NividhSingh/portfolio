@@ -26,11 +26,16 @@ body {
   line-height: 1.5em;
 }
 
-.terminal-body pre.ascii-art {
+.terminal-body pre.ascii-art-small {
   font-size: 1em;
   line-height: 1em;
   margin: 0;
-  /* You can also add other styling (like font-family) if desired */
+}
+
+.terminal-body pre.ascii-art-large {
+  font-size: 0.7em;
+  line-height: 1em;
+  margin: 0;
 }
 
 /* Style for the welcome message */
@@ -99,7 +104,15 @@ body {
   color: #fff;
 }
 
-.tldr-highlight {
+.tldr-command {
   color: purple;
   font-weight: bold;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #87ceeb !important;
 }

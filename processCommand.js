@@ -30,7 +30,9 @@ function processCommand(cmd) {
       // Load ASCII art only if the screen is wide enough.
       return loadAsciiArt("ascii_art/headshot.txt").then((art) => {
         // Wrap the art in a <pre> tag with a specific class for styling.
-        const artOutput = art ? `<pre class="ascii-art">${art}</pre><br>` : "";
+        const artOutput = art
+          ? `<pre class="ascii-art-large">${art}</pre><br>`
+          : "";
         return artOutput + bioData.bio;
       });
 
@@ -64,7 +66,7 @@ function processCommand(cmd) {
         tldrItems.forEach((item) => {
           output += `
         <div class="tldr-item mb-4">
-          <div class="tldr-highlight text-purple-500 font-bold">tldr ${item.title}</div>
+          <div class="tldr-command text-purple-500 font-bold">tldr ${item.title}</div>
           <div class="tldr-description text-white">${item.description}</div>
         </div>`;
         });
@@ -99,8 +101,20 @@ function processCommand(cmd) {
       return "";
 
     default:
+      // Handle specific tldr commands, e.g., "tldr project alpha"
       if (cmd.toLowerCase().startsWith("tldr ")) {
-        return "Specific TLDR command not implemented yet.";
+        let query = cmd.slice(5).trim();
+        let matchedItem = tldrItems.find(
+          (item) => item.title.toLowerCase() === query.toLowerCase()
+        );
+        if (matchedItem) {
+          return `<div class="tldr-specific">
+                      <div class="tldr-description text-white">${matchedItem.description}</div>
+                      <a href="${matchedItem.link}" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">More info</a>
+                    </div>`;
+        } else {
+          return `No matching TLDR item found for "${query}".`;
+        }
       }
       return 'Command not recognized. Type "help" for a list of commands.';
   }

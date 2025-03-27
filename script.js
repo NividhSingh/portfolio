@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (ascii) {
         const artDiv = document.createElement("div");
         artDiv.className = "ascii-art";
-        artDiv.innerHTML = `<pre class="ascii-art">${ascii}</pre>`;
+        artDiv.innerHTML = `<pre class="ascii-art-small">${ascii}</pre>`;
         terminalBody.appendChild(artDiv);
       }
       const welcome = document.createElement("div");

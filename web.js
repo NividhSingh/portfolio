@@ -51,7 +51,7 @@ function renderCards() {
           <div class="relative aspect-[3/2]">
             <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-4">
-              <h3 class="text-xl font-bold text-white mb-2"><span>${item.title}</span></h3>
+              <h3 class="text-xl font-bold text-white mb-2 text-center"><span>${item.title}</span></h3>
               <p class="text-white text-sm">${item.description}</p>
             </div>
           </div>

@@ -1,28 +1,62 @@
 // tldrData.js
 const tldrItems = [
-  { title: "The Cube", link: "placeholder.com", type: "project" },
-  { title: "NASA SLI Rocket", link: "placeholder.com", type: "project" },
+  {
+    title: "The Cube",
+    link: "placeholder.com",
+    type: "project",
+    image: "img/cube.png",
+    description: "",
+  },
+  {
+    title: "NASA SLI Rocket",
+    link: "placeholder.com",
+    type: "project",
+    image: "img/NASA-SLI-Rocket.png",
+    description:
+      "I led a team to design, simulat, build, test, and successfully launch a rocket for the NASA SLI 2022-23 Challenge. Won the Payload Design Award. The rocket was about seven feet and went about 3,500 feet into the air.",
+  },
   {
     title: "Active Aerobrake System",
     link: "placeholder.com",
     type: "project",
+    image: "img/active-aerobrake.png",
+    description:
+      "I built an active aerobrake system that controlled the rocket’s ascent. The system actively predicts the rocket's apogee. If this is higher than the goal apogee, the system deploys three fins to increase the surface area of the rocket. This increases the drag, decreasing the projected apogee.",
   },
-
+  {
+    title: "Hobby Hub",
+    link: "placeholder.com",
+    type: "project",
+    image: "img/hobby-hub.png",
+    description:
+      "Built a mobile app using Xamarin and Google's Fire Base Server to connect people based on their hobbies",
+  },
+  {
+    title: "Eagle Project",
+    link: "placeholder.com",
+    type: "project",
+    description: "",
+  },
   {
     title: "Spring Launch at Palantir",
     link: "placeholder.com",
     type: "internship",
+    image: "img/palantir.png",
+    description: "Spring Launch Intern",
   },
-  { title: "Software at Pacer", link: "placeholder.com", type: "internship" },
+  {
+    title: "Software at Pacer",
+    link: "placeholder.com",
+    type: "internship",
+    image: "img/pacer.png",
+    description: "Part-Time Software Engineer",
+  },
   {
     title: "Software Intern at Mach Industries",
     link: "placeholder.com",
     type: "internship",
-  },
-  {
-    title: "Software Intern at Mach Industries",
-    link: "placeholder.com",
-    type: "internship",
+    image: "img/mach.png",
+    description: "Summer 2024 Computer Science Internship",
   },
 ];
 

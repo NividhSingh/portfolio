@@ -84,6 +84,9 @@ const tldrItems = [
     description: "Part-Time Software Engineer",
     date: "2025-06-01",
     favorite: 87,
+    ascii_image: "ascii_art/pacer.txt",
+    ascii_image_length: 500,
+    asciiLargeOrSmall: "small",
   },
   {
     title: "Software Intern at Mach Industries",
@@ -93,6 +96,9 @@ const tldrItems = [
     description: "Summer 2024 Computer Science Internship",
     date: "2024-08-01",
     favorite: 90,
+    ascii_image: "ascii_art/mach.txt",
+    ascii_image_length: 500,
+    asciiLargeOrSmall: "small",
   },
 ];
 

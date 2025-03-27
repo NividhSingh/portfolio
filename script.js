@@ -111,7 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // Clear the current input
         e.target.innerHTML = "";
       } else if (e.key === "ArrowUp") {
-        console.log("Up");
         e.preventDefault();
         // Only if there's history available
         if (commandHistory.length > 0) {

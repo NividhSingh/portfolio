@@ -1,3 +1,39 @@
+// Build an array of autocomplete commands (static + dynamic from tldrItems)
+const staticCommands = [
+  "help",
+  "about me",
+  "clear",
+  "open resume",
+  "email",
+  "open github",
+  "open linkedin",
+  "tldr",
+  "tldr projects",
+  "tldr internships",
+];
+
+let possibleCommands = staticCommands.slice(); // Clone the static commands
+
+// If tldrItems is available, add specific TLDR commands dynamically.
+if (typeof tldrItems !== "undefined" && Array.isArray(tldrItems)) {
+  tldrItems.forEach((item) => {
+    possibleCommands.push("tldr " + item.title);
+  });
+}
+
+// Helper function: returns the common prefix (case-insensitive) of two strings.
+function commonPrefix(s1, s2) {
+  let i = 0;
+  while (
+    i < s1.length &&
+    i < s2.length &&
+    s1[i].toLowerCase() === s2[i].toLowerCase()
+  ) {
+    i++;
+  }
+  return s1.substring(0, i);
+}
+
 document.addEventListener("click", () => {
   const commandInputs = document.querySelectorAll(".command");
   const lastCommand = commandInputs[commandInputs.length - 1];
@@ -17,6 +53,35 @@ document.addEventListener("DOMContentLoaded", function () {
   // Use event delegation to handle keydown events on any .command element
   terminalBody.addEventListener("keydown", function (e) {
     if (e.target.classList.contains("command")) {
+      // Tab autocomplete logic:
+      if (e.key === "Tab") {
+        e.preventDefault();
+        const inputEl = e.target;
+        const currentText = inputEl.textContent.trim();
+
+        // Filter possibleCommands that start with currentText (case-insensitive)
+        const matches = possibleCommands.filter((cmd) =>
+          cmd.toLowerCase().startsWith(currentText.toLowerCase())
+        );
+
+        if (matches.length === 1) {
+          // Exactly one match: autocomplete the command with a trailing space.
+          inputEl.textContent = matches[0] + " ";
+          setCaretToEnd(inputEl);
+        } else if (matches.length > 1) {
+          // Multiple matches: compute their common prefix.
+          let common = matches[0];
+          for (let i = 1; i < matches.length; i++) {
+            common = commonPrefix(common, matches[i]);
+          }
+          if (common.length > currentText.length) {
+            inputEl.textContent = common;
+            setCaretToEnd(inputEl);
+          }
+          // Optionally, you could also display the list of possible matches.
+        }
+        return;
+      }
       if (e.key === "Enter") {
         e.preventDefault();
         const currentLine = e.target.parentElement;

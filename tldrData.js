@@ -1,62 +1,86 @@
 // tldrData.js
 const tldrItems = [
+  /* 
+  {
+  date: "yyyy-month-day"
+  }
+  */
   {
     title: "The Cube",
-    link: "placeholder.com",
+    link: "https://nividhsingh.github.io/Cube/",
     type: "project",
     image: "img/cube.png",
-    description: "",
+    description:
+      "Built a cube that uses a PID controller and flywheel to balance on its edge",
+    date: "2024-12-12",
+    favorite: 5,
   },
   {
     title: "NASA SLI Rocket",
-    link: "placeholder.com",
+    link: "https://nividh.myportfolio.com/nasa-sli-rocket",
     type: "project",
     image: "img/NASA-SLI-Rocket.png",
     description:
       "I led a team to design, simulat, build, test, and successfully launch a rocket for the NASA SLI 2022-23 Challenge. Won the Payload Design Award. The rocket was about seven feet and went about 3,500 feet into the air.",
+    date: "2023-05-04",
+    favorite: 5,
   },
   {
     title: "Active Aerobrake System",
-    link: "placeholder.com",
+    link: "https://nividh.myportfolio.com/aerobrake-system",
     type: "project",
     image: "img/active-aerobrake.png",
     description:
       "I built an active aerobrake system that controlled the rocket’s ascent. The system actively predicts the rocket's apogee. If this is higher than the goal apogee, the system deploys three fins to increase the surface area of the rocket. This increases the drag, decreasing the projected apogee.",
+    date: "2023-05-01",
+    favorite: 5,
   },
   {
     title: "Hobby Hub",
-    link: "placeholder.com",
+    link: "https://torin-perkins.github.io/Hobby-Hub/",
     type: "project",
     image: "img/hobby-hub.png",
     description:
       "Built a mobile app using Xamarin and Google's Fire Base Server to connect people based on their hobbies",
+    date: "2022-04-01",
+    favorite: 5,
   },
   {
     title: "Eagle Project",
-    link: "placeholder.com",
+    link: "https://www.beautyofcars.com/nividh-singhs-eagle-project",
     type: "project",
-    description: "",
+    image: "img/eagle_project.JPG",
+    description:
+      "One of the biggest parts of my journey toward becoming an Eagle Scout is an Eagle Project. This involves leading a project to benefit a non-profit organization. For my Eagle Project, I built four benches for the Portland Chapter of the Audubon Society. ",
+    date: "2022-08-18",
+    favorite: 5,
   },
   {
     title: "Spring Launch at Palantir",
-    link: "placeholder.com",
+    link: "https://www.palantir.com/careers/students/launch/",
     type: "internship",
     image: "img/palantir.png",
     description: "Spring Launch Intern",
+    date: "2025-03-16",
+    favorite: 5,
   },
   {
-    title: "Software at Pacer",
-    link: "placeholder.com",
+    title: "Software Engineer at Pacer",
+    link: "https://nividh.myportfolio.com/pacer",
     type: "internship",
     image: "img/pacer.png",
     description: "Part-Time Software Engineer",
+    date: "2025-06-01",
+    favorite: 5,
   },
   {
     title: "Software Intern at Mach Industries",
-    link: "placeholder.com",
+    link: "https://nividh.myportfolio.com/mach-industries",
     type: "internship",
     image: "img/mach.png",
     description: "Summer 2024 Computer Science Internship",
+    date: "2024-08-01",
+    favorite: 5,
   },
 ];
 

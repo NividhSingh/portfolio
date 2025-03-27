@@ -6,4 +6,9 @@ const bioData = {
     Outside of engineering, I enjoy playing basketball, watching F1, riding horses, and go-karting.`,
   resumeLink:
     "https://docs.google.com/document/d/1xOpIpcQ4YZEk0xlyqJd2V3STzV4u0RQjVtV2C9b-JbU/edit?usp=sharing",
+  socials: {
+    github: "https://github.com/NividhSingh",
+    linkedin: "https://linkedin.com/in/NividhSingh",
+    instagram: "https://instagram.com/NividhSingh",
+  },
 };

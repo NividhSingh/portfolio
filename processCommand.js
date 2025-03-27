@@ -95,6 +95,9 @@ function processCommand(cmd) {
         tldrItems.filter((item) => item.type === "internship")
       );
 
+    case "other":
+      return "I didn't literally mean other, I meant try using tab for autocomplete or arrow up for previous commands";
+
     case "exit":
       // Redirect to the web version
       window.location.href = "web.html";

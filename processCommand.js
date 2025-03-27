@@ -108,10 +108,30 @@ function processCommand(cmd) {
           (item) => item.title.toLowerCase() === query.toLowerCase()
         );
         if (matchedItem) {
-          return `<div class="tldr-specific">
-                      <div class="tldr-description text-white">${matchedItem.description}</div>
-                      <a href="${matchedItem.link}" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">More info</a>
-                    </div>`;
+          if (matchedItem.ascii_image) {
+            return loadAsciiArt(
+              matchedItem.ascii_image,
+              matchedItem.ascii_image_length
+            ).then((art) => {
+              const artOutput = art
+                ? `<pre class="ascii-art-small">${art}</pre><br>`
+                : "";
+
+              return (
+                artOutput +
+                `<div class="tldr-specific">
+                  <div class="tldr-description text-white">${matchedItem.description}</div>
+                  <a href="${matchedItem.link}" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">More info</a>
+                </div>`
+              );
+            });
+          } else {
+            // No ASCII image — just return the content
+            return `<div class="tldr-specific">
+              <div class="tldr-description text-white">${matchedItem.description}</div>
+              <a href="${matchedItem.link}" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">More info</a>
+            </div>`;
+          }
         } else {
           return `No matching TLDR item found for "${query}".`;
         }

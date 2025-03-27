@@ -63,6 +63,8 @@ const tldrItems = [
     description: "Spring Launch Intern",
     date: "2025-03-16",
     favorite: 5,
+    ascii_image: "ascii_art/palantir.txt",
+    ascii_image_length: 428,
   },
   {
     title: "Software Engineer at Pacer",

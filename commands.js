@@ -48,4 +48,8 @@ const helpCommands = [
     command: "exit",
     description: "switch to the web version",
   },
+  {
+    command: "other",
+    description: "try using other linux features like tab and up arrow",
+  },
 ];

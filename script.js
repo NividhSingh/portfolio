@@ -1,20 +1,13 @@
 // Build an array of autocomplete commands (static + dynamic from tldrItems)
-const staticCommands = [
-  "help",
-  "about me",
-  "clear",
-  "open resume",
-  "email",
-  "open github",
-  "open linkedin",
-  "tldr",
-  "tldr projects",
-  "tldr internships",
-];
+// Build an array of autocomplete commands from helpCommands defined in commands.js
+let staticCommands = [];
+if (typeof helpCommands !== "undefined" && Array.isArray(helpCommands)) {
+  staticCommands = helpCommands.map((item) => item.command);
+}
 
-let possibleCommands = staticCommands.slice(); // Clone the static commands
+// Then combine with dynamic specific TLDR commands from tldrItems
+let possibleCommands = staticCommands.slice(); // copy the static commands
 
-// If tldrItems is available, add specific TLDR commands dynamically.
 if (typeof tldrItems !== "undefined" && Array.isArray(tldrItems)) {
   tldrItems.forEach((item) => {
     possibleCommands.push("tldr " + item.title);

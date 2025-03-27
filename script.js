@@ -181,7 +181,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       const welcome = document.createElement("div");
       welcome.className = "welcome";
-      welcome.innerHTML = `Welcome to Nividh Singh's Portfolio. Type <span class="command-highlight">help</span> to get started or type <span class="command-highlight">exit</span> or <span class="command-highlight">web</span> for the web version.`;
+      welcome.innerHTML = `Welcome to Nividh Singh's Portfolio. Type <span class="command-highlight">help</span> to get started or type <span class="command-highlight">exit</span> or <span class="command-highlight">web</span> for the web version. 
+                            Additionally, you can use tab to autocomplete commands.`;
       terminalBody.appendChild(welcome);
       createPrompt();
     });

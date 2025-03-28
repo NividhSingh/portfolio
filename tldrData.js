@@ -86,7 +86,7 @@ const tldrItems = [
     favorite: 87,
     ascii_image: "ascii_art/pacer.txt",
     ascii_image_length: 500,
-    asciiLargeOrSmall: "small",
+    asciiLargeOrSmall: "large",
   },
   {
     title: "Software Intern at Mach Industries",
@@ -98,7 +98,7 @@ const tldrItems = [
     favorite: 90,
     ascii_image: "ascii_art/mach.txt",
     ascii_image_length: 500,
-    asciiLargeOrSmall: "small",
+    asciiLargeOrSmall: "large",
   },
 ];
 

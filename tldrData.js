@@ -24,7 +24,7 @@ const tldrItems = [
     type: "project",
     image: "img/NASA-SLI-Rocket.png",
     description:
-      "I led a team to design, simulat, build, test, and successfully launch a rocket for the NASA SLI 2022-23 Challenge. Won the Payload Design Award. The rocket was about seven feet and went about 3,500 feet into the air.",
+      "I led a team to design, simulate, build, test, and successfully launch a rocket for the NASA SLI 2022-23 Challenge. Won the Payload Design Award. The rocket was about seven feet and went about 3,500 feet into the air.",
     date: "2023-05-04",
     favorite: 80,
   },
@@ -44,7 +44,7 @@ const tldrItems = [
     type: "project",
     image: "img/hobby-hub.png",
     description:
-      "Built a mobile app using Xamarin and Google's Fire Base Server to connect people based on their hobbies",
+      "Built a mobile app using Xamarin and Google's Firebase Server to connect people based on their hobbies",
     date: "2022-04-01",
     favorite: 50,
     ascii_image: "ascii_art/hobby_hub.txt",

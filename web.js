@@ -196,3 +196,45 @@ const mobileProjectsMenu = document.getElementById("mobile-projects-menu");
 mobileProjectsToggle.addEventListener("click", () => {
   mobileProjectsMenu.classList.toggle("hidden");
 });
+
+// Function to render mobile sidebar menus dynamically from tldrItems
+function renderMobileSidebarMenus() {
+  const internshipMenu = document.getElementById("mobile-internships-menu");
+  const projectsMenu = document.getElementById("mobile-projects-menu");
+
+  if (internshipMenu) {
+    internshipMenu.innerHTML = "";
+    tldrItems
+      .filter((item) => item.type === "internship")
+      .forEach((item) => {
+        const a = document.createElement("a");
+        a.href = item.link;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.className = "block text-sm px-4 py-2 hover:bg-gray-700 rounded";
+        a.textContent = item.title;
+        internshipMenu.appendChild(a);
+      });
+  }
+
+  if (projectsMenu) {
+    projectsMenu.innerHTML = "";
+    tldrItems
+      .filter((item) => item.type === "project")
+      .forEach((item) => {
+        const a = document.createElement("a");
+        a.href = item.link;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.className = "block text-sm px-4 py-2 hover:bg-gray-700 rounded";
+        a.textContent = item.title;
+        projectsMenu.appendChild(a);
+      });
+  }
+}
+
+// Call this function when the DOM is loaded
+document.addEventListener("DOMContentLoaded", function () {
+  // Other initialization code...
+  renderMobileSidebarMenus();
+});

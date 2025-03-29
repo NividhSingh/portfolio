@@ -69,69 +69,36 @@
       </button>
     </nav>
 
-    <!-- Mobile Full-Screen Menu Overlay -->
-    <div
-      id="mobile-menu"
-      class="fixed inset-0 bg-black z-50 transform translate-x-full transition-transform duration-300 md:hidden"
-    >
-      <div
-        class="p-4 border-b border-gray-700 flex items-center justify-between"
-      >
-        <a href="web.html" class="text-xl font-bold">NS</a>
-        <button id="mobile-menu-close" class="text-2xl focus:outline-none">
-          &times;
-        </button>
+<!-- Mobile Full-Screen Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-black z-50 transform translate-x-full transition-transform duration-300 md:hidden">
+  <div class="p-4 border-b border-gray-700 flex items-center justify-between">
+    <a href="web.html" class="text-xl font-bold">MyLogo</a>
+    <button id="mobile-menu-close" class="text-2xl focus:outline-none">&times;</button>
+  </div>
+  <nav class="p-4">
+    <a href="index.html" class="block px-4 py-2 hover:bg-gray-800 rounded">Terminal</a>
+    <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 hover:bg-gray-800 rounded">Resume</a>
+    <!-- Internships Dropdown -->
+    <div class="mt-2">
+      <button id="mobile-internships-toggle" class="w-full text-left px-4 py-2 hover:bg-gray-800 rounded flex justify-between items-center">
+        Internships <span>&#9660;</span>
+      </button>
+      <div id="mobile-internships-menu" class="pl-6 mt-1 space-y-1 hidden">
+        <!-- Dynamic internship links will be injected here -->
       </div>
-      <nav class="p-4">
-        <a href="index.html" class="block px-4 py-2 hover:bg-gray-800 rounded"
-          >Terminal</a
-        >
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block px-4 py-2 hover:bg-gray-800 rounded"
-          id="resume-link-menu"
-          >Resume</a
-        >
-        <!-- Internships Dropdown -->
-        <div class="mt-2">
-          <button
-            id="mobile-internships-toggle"
-            class="w-full text-left px-4 py-2 hover:bg-gray-800 rounded flex justify-between items-center"
-          >
-            Internships <span>&#9660;</span>
-          </button>
-          <div id="mobile-internships-menu" class="pl-6 mt-1 space-y-1 hidden">
-            <!-- Dynamic internship links go here -->
-            <a href="#" class="block px-4 py-2 hover:bg-gray-700 rounded"
-              >Internship 1</a
-            >
-            <a href="#" class="block px-4 py-2 hover:bg-gray-700 rounded"
-              >Internship 2</a
-            >
-          </div>
-        </div>
-        <!-- Projects Dropdown -->
-        <div class="mt-2">
-          <button
-            id="mobile-projects-toggle"
-            class="w-full text-left px-4 py-2 hover:bg-gray-800 rounded flex justify-between items-center"
-          >
-            Projects <span>&#9660;</span>
-          </button>
-          <div id="mobile-projects-menu" class="pl-6 mt-1 space-y-1 hidden">
-            <!-- Dynamic project links go here -->
-            <a href="#" class="block px-4 py-2 hover:bg-gray-700 rounded"
-              >Project 1</a
-            >
-            <a href="#" class="block px-4 py-2 hover:bg-gray-700 rounded"
-              >Project 2</a
-            >
-          </div>
-        </div>
-      </nav>
     </div>
+    <!-- Projects Dropdown -->
+    <div class="mt-2">
+      <button id="mobile-projects-toggle" class="w-full text-left px-4 py-2 hover:bg-gray-800 rounded flex justify-between items-center">
+        Projects <span>&#9660;</span>
+      </button>
+      <div id="mobile-projects-menu" class="pl-6 mt-1 space-y-1 hidden">
+        <!-- Dynamic project links will be injected here -->
+      </div>
+    </div>
+  </nav>
+</div>
+
 
     <!-- Main Content -->
     <main class="pt-20">

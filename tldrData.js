@@ -102,7 +102,7 @@ const tldrItems = [
   },
   {
     title: "C Compiler From Scratch",
-    link: "https://github.com/olincollege/rv32i_compiler/pulls",
+    link: "https://github.com/olincollege/rv32i_compiler",
     type: "project",
     image: "img/compiler.png",
     description:
